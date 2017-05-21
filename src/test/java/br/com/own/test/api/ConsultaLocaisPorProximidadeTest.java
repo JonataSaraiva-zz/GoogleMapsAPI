@@ -1,6 +1,5 @@
 package br.com.own.test.api;
 
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Optional;
@@ -16,7 +15,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import br.com.own.CaminhoCerto;
 import br.com.own.bean.UsuarioDados;
 import br.com.own.dtos.Response;
-import br.com.own.model.ConsultaAPINearBy;
+import br.com.own.model.ConsomeNearBy;
 import br.com.own.model.Interesse;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -25,7 +24,7 @@ import br.com.own.model.Interesse;
 public class ConsultaLocaisPorProximidadeTest {
 	
 	@Autowired
-	private ConsultaAPINearBy consultaAPINearBy;
+	private ConsomeNearBy consultaAPINearBy;
 
 	private UsuarioDados usuarioDados;
 	
@@ -41,12 +40,9 @@ public class ConsultaLocaisPorProximidadeTest {
 	public void seSaoRetornadosLocaisProximosALocalizacaoFornecida(){
 		Optional<Response> resposta = consultaAPINearBy.porInteresse(usuarioDados);
 		
-		if( resposta.isPresent() )
-			assertTrue(resposta.get().getResultados().size() > 0);
-		
-		else
-			assertFalse(true);
+		resposta.ifPresent(r -> {
+			assertTrue( r.getResultados().size() > 0 );
+		});
 		
 	}
-
 }

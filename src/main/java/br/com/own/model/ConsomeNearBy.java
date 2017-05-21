@@ -11,7 +11,7 @@ import br.com.own.dtos.Response;
 import br.com.own.ws.GenericRestClient;
 
 @Service
-public class ConsultaAPINearBy  {
+public class ConsomeNearBy  {
 	
 	@Autowired
 	@Qualifier("APINearBy")
@@ -20,7 +20,7 @@ public class ConsultaAPINearBy  {
 	private GenericRestClient<UsuarioDados> genericRest;
 
 	@Autowired
-	public ConsultaAPINearBy(GenericRestClient<UsuarioDados> genericRestClient) {
+	public ConsomeNearBy(GenericRestClient<UsuarioDados> genericRestClient) {
 		this.genericRest = genericRestClient;
 	}
 	

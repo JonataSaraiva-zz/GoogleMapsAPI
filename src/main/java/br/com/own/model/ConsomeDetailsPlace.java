@@ -8,10 +8,11 @@ import org.springframework.stereotype.Service;
 
 import br.com.own.dtos.EstabelecimentoDetails;
 import br.com.own.dtos.Resultado;
+import br.com.own.exceptions.InvalidRequest;
 import br.com.own.ws.GenericRestClient;
 
 @Service
-public class ConsultaAPIDetailsPlace {
+public class ConsomeDetailsPlace {
 
 	@Autowired
 	@Qualifier("APIDetailsPlace")
@@ -20,7 +21,7 @@ public class ConsultaAPIDetailsPlace {
 	private GenericRestClient<Resultado> genericRestClient;
 
 	@Autowired
-	public ConsultaAPIDetailsPlace(GenericRestClient<Resultado>client) {
+	public ConsomeDetailsPlace( GenericRestClient<Resultado> client ) {
 		this.genericRestClient = client;
 	}
 
@@ -35,7 +36,7 @@ public class ConsultaAPIDetailsPlace {
 	private void validResponseReturned(Optional<EstabelecimentoDetails> resposta) {
 		resposta.ifPresent(r -> {
 			if (r.getStatus().equals("INVALID_REQUEST")) {
-				throw new RuntimeException("Solicitação invalida, verifique as informações e tente novamente");
+				throw new InvalidRequest("Solicitação invalida, verifique as informações e tente novamente");
 			}
 		});
 	}

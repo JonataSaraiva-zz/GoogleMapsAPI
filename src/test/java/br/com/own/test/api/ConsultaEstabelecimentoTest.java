@@ -13,7 +13,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import br.com.own.CaminhoCerto;
 import br.com.own.dtos.EstabelecimentoDetails;
 import br.com.own.dtos.Resultado;
-import br.com.own.model.ConsultaAPIDetailsPlace;
+import br.com.own.model.ConsomeDetailsPlace;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -22,7 +22,7 @@ import br.com.own.model.ConsultaAPIDetailsPlace;
 public class ConsultaEstabelecimentoTest {
 	
 	@Autowired
-	private ConsultaAPIDetailsPlace consultaApi;
+	private ConsomeDetailsPlace consultaApi;
 	
 	private Resultado resultado;
 	

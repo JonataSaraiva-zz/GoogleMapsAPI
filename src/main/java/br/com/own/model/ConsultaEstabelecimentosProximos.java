@@ -15,13 +15,13 @@ import br.com.own.dtos.Resultado;
 @Service
 public class ConsultaEstabelecimentosProximos {
 
-	private ConsultaAPIDetailsPlace consultaAPIDetailsPlace;
-	private ConsultaAPINearBy consultaAPINearBy;
+	private ConsomeDetailsPlace consultaAPIDetailsPlace;
+	private ConsomeNearBy consultaAPINearBy;
 	
 	private Optional<List<EstabelecimentoDetails>> estabelecimentoDetails;
 
 	@Autowired
-	ConsultaEstabelecimentosProximos(ConsultaAPIDetailsPlace consultaAPIDetailsPlace, ConsultaAPINearBy consultaAPINearBy) {
+	ConsultaEstabelecimentosProximos(ConsomeDetailsPlace consultaAPIDetailsPlace, ConsomeNearBy consultaAPINearBy) {
 		this.consultaAPIDetailsPlace = consultaAPIDetailsPlace;
 		this.consultaAPINearBy = consultaAPINearBy;
 	}
