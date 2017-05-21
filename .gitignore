@@ -1,0 +1,28 @@
+.DS_Store
+Servers/*
+.metadata
+.settings
+.classpath
+.project
+target/
+bin/
+rebel.xml
+.mvn*
+mvnw*
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/
